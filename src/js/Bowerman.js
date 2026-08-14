@@ -2,7 +2,7 @@ import Character from "./Character.js";
 
 class Bowerman extends Character {
   constructor(name) {
-    super(name, "Bowman");
+    super(name, "Bowerman");
     this.attack = 25;
     this.defence = 25;
   }

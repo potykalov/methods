@@ -4,7 +4,7 @@ describe("Bowerman", () => {
   it("return object of character Bowman", () => {
     const expected = {
       name: "Dmitriy",
-      type: "Bowman",
+      type: "Bowerman",
       health: 100,
       level: 1,
       attack: 25,

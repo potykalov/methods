@@ -4,11 +4,13 @@ describe("Character", () => {
   it("return object of character", () => {
     const expected = {
       name: "Dmitriy",
-      type: "Bowman",
+      type: "Bowerman",
       health: 100,
       level: 1,
+      attack: 25,
+      defence: 25,
     };
-    const received = new Character("Dmitriy", "Bowman");
+    const received = new Character("Dmitriy", "Bowerman");
 
     expect(received).toEqual(expected);
   });
@@ -29,5 +31,39 @@ describe("Character", () => {
     };
 
     expect(received).toThrow(expected);
+  });
+
+  it("increases the character's level", () => {
+    const expected = {
+      name: "Dmitriy",
+      type: "Bowerman",
+      health: 100,
+      level: 2,
+      attack: 30,
+      defence: 30,
+    };
+    const received = new Character("Dmitriy", "Bowerman");
+
+    received.levelUp();
+
+    expect(received).toEqual(expected);
+  });
+
+  it("deals damage, reducing health", () => {
+    const expected = {
+      name: "Dmitriy",
+      type: "Bowerman",
+      health: 85,
+      level: 1,
+      attack: 25,
+      defence: 25,
+    };
+    const received = new Character("Dmitriy", "Bowerman");
+
+    received.damage(20);
+
+    console.log(received);
+
+    expect(received).toEqual(expected);
   });
 });
